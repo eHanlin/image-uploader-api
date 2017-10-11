@@ -6,6 +6,10 @@
     "Sparrow.jang <sparrow.jang@gmail.com>"
   ],
   "keywords": [
+    "upload",
+    "mulitpart",
+    "client",
+    "api"
   ],
   "main": [
     "build/bundle.js"
