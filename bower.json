@@ -1,0 +1,13 @@
+{
+  "name":"image-uploader-api",
+  "version":"1.0.0",
+  "descriptor":"This is upload client api.",
+  "authors": [
+    "Sparrow.jang <sparrow.jang@gmail.com>"
+  ],
+  "keywords": [
+  ],
+  "main": [
+    "build/bundle.js"
+  ]
+}

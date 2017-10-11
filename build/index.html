@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="/bundle.js"></script>
+</head>
+<body>
+  <img src="" alt="" />
+  <input type="url" name="url" placeholder="Enter your api url, please!" style="width:500px;" />
+  <input type="button" name="submit" value="submit" />
+  <script>
+    var submitBtn = document.querySelector('[name="submit"]');
+    var urlInput = document.querySelector('[name="url"]');
+    var img = document.querySelector('img');
+    var imgBlob;
+
+    function decorateDescriptor(descriptor){
+      console.log(JSON.stringify(descriptor));
+      descriptor["logo"] = true;
+      console.log(descriptor);
+    }
+
+    function uploadFn() {
+      console.log('upload');
+    }
+
+    fetch('ehanlin_logo.png').then(function(response){
+      return response.blob();
+    })
+    .then(function(blob){
+      var objectURL = URL.createObjectURL(blob);
+      img.src = objectURL;
+      imgBlob = blob;
+    });
+    submitBtn.addEventListener('click', function() {
+      var url = urlInput.value;
+      if (url && imgBlob) {
+        imageUploaderApi
+          .createContext(url)
+          .upload('test/ehanlin/logo.png', imgBlob, decorateDescriptor, uploadFn)
+          .then(function() {
+            console.log('done');
+          });
+      }
+    });
+  </script>
+</body>
+</html>
+
