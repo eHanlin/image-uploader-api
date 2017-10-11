@@ -5,6 +5,18 @@ The `image-uploader-api` is a upload API, it implement multipart format.
 
 You can use this client api if you don't want to depend on other packages.
 
+## Install
+
+**npm：**
+```sh
+npm install image-uploader-api
+```
+
+**bower：**
+```sh
+bower install image-uploader-api
+```
+
 
 ## Usage
 
