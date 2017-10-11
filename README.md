@@ -13,7 +13,8 @@ The api use like this：
 ```js
 let context = imageUploaderApi.createContext(url);
 
-context.upload('your key', fileBlob);
+let promise = context.upload('your key', fileBlob);
+promise.then(()=> console.log('done'), ()=> console.log('error'));
 ```
 
 ## API
@@ -31,7 +32,7 @@ For `ImageUploaderApiContext`, it's a context object that is able to set some of
 
 * url(required): The parameter is api host.
 
-##### upload(key:String, fileBlob:Blob, decorateDescriptor:function?, uploadCB:function?)
+##### upload(key:String, fileBlob:Blob, decorateDescriptor:function?, uploadCB:function?) : Promise
 
 * key(required): Be able to be filename or path.
 * fileBlob(required): File content will be uploaded to server.
