@@ -22,20 +22,20 @@ context.upload('your key', fileBlob);
 
 Create an ImageUploaderApiContext.
 
-* url: The parameter is api host.
+* url(required): The parameter is api host.
 
 
 #### ImageUploaderApiContext(url:String)
 
-For ImageUploaderApiContext, it's a context object that is able to set some of default parameters.
+For `ImageUploaderApiContext`, it's a context object that is able to set some of default parameters.
 
-* url: The parameter is api host.
+* url(required): The parameter is api host.
 
 ##### upload(key:String, fileBlob:Blob, decorateDescriptor:function?, uploadCB:function?)
 
-* key: Be able to be filename or path.
-* fileBlob: File content will be uploaded to server.
-* decorateDescriptor: The function is able to decorate default descriptor of image, and it will be send to server to be processed.
+* key(required): Be able to be filename or path.
+* fileBlob(required): File content will be uploaded to server.
+* decorateDescriptor(optional): The function is able to decorate default descriptor of image, and it will be send to server to be processed.
 
 ```js
 function decorateDescriptor(descriptor) {
@@ -43,7 +43,7 @@ function decorateDescriptor(descriptor) {
 }
 ```
 
-* uploadCB: The function will be called when the progress succeeed with file where to upload server.
+* uploadCB(optional): The function will be called when the progress succeeed with file where to upload server.
 
 
 **See default descriptor below：**
