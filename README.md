@@ -36,12 +36,19 @@ For ImageUploaderApiContext, it's a context object that is able to set some of d
 * key: Be able to be filename or path.
 * fileBlob: File content will be uploaded to server.
 * decorateDescriptor: The function is able to decorate default descriptor of image, and it will be send to server to be processed.
+
+```js
+function decorateDescriptor(descriptor) {
+  descriptor['version'] = '1.0.0';
+}
+```
+
 * uploadCB: The function will be called when the progress succeeed with file where to upload server.
 
 
 **See default descriptor below：**
 
-```
+```js
 {  
    "screen":{  
       "availHeight":773,
